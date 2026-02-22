@@ -8,10 +8,13 @@
 - Performance Engineering
 
 ## Environment
-- Windows 11 + WSL2
-- Ubuntu 22.04
-- CUDA Toolkit
-- RTX 5070 Ti
+Windows 11
+ ├─ NVIDIA Windows Driver
+ ├─ WSL2 Hyper-V backend
+ │   └─ Ubuntu 22.04
+ │        ├─ CUDA Toolkit
+ │        ├─ nvcc
+ │        └─ Direct GPU access
 
 ## Structure
 - notes/        -> Technical notes and derivations
