@@ -1,4 +1,4 @@
-# mdameenh Systems Lab
+# mdameenh personal lab
 
 ## Focus Areas
 - CUDA Programming
