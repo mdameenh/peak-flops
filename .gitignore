@@ -1,0 +1,30 @@
+# Build
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+
+# CUDA
+*.cubin
+*.ptx
+*.fatbin
+
+# Executables
+*.out
+*.exe
+*.o
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Data outputs
+data/*.csv
+data/profiling_logs/*
+
+# VSCode
+.vscode/
