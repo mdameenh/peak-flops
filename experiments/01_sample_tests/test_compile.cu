@@ -24,7 +24,7 @@ __global__ void VecAdd(const float* A, const float* B, float* C, int N)
 int main()
 {
     int blockSize = 256;
-    int M = 10;  // Number of repetitions per N
+    int M = 50;  // Number of repetitions per N
     int startN = 0.1e9;
     int endN = 2e9;
     int stepN = 0.1e9;
