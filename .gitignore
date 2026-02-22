@@ -1,42 +1,10 @@
-# Build
-build/
-cmake-build-*/
-CMakeFiles/
+
+# Ignore CMake build artifacts and install files anywhere
 CMakeCache.txt
-Makefile
-
-# CUDA
-*.cubin
-*.ptx
-*.fatbin
-
-# Executables
-*.out
-*.exe
-*.o
-
-# Logs
-*.log
-
-# Python
-__pycache__/
-*.pyc
-
-
-# Build folders and CMake artifacts
-build/
-cmake-build-*/
 CMakeFiles/
-CMakeCache.txt
 Makefile
-Testing/
-CTestTestfile.cmake
-CPack*/*
-
-# Experiment outputs
-experiments/*/build/
-experiments/*/*.out
-experiments/*/*.o
-experiments/*/*.log
-
-# CUDA
+cmake_install.cmake
+**/CMakeCache.txt
+**/CMakeFiles/
+**/Makefile
+**/cmake_install.cmake
