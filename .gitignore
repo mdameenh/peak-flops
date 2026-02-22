@@ -22,9 +22,21 @@ Makefile
 __pycache__/
 *.pyc
 
-# Data outputs
-data/*.csv
-data/profiling_logs/*
 
-# VSCode
-.vscode/
+# Build folders and CMake artifacts
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+Testing/
+CTestTestfile.cmake
+CPack*/*
+
+# Experiment outputs
+experiments/*/build/
+experiments/*/*.out
+experiments/*/*.o
+experiments/*/*.log
+
+# CUDA
