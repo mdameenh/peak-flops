@@ -16,35 +16,35 @@ FLOPS = numThreads * FLOPS per iteration * iterations / kernel_time (secs) * 10e
 
 
 ## CUDA execution model
-Hierarchy: Grid --> Blocks --> Threads  
+```Hierarchy: Grid --> Blocks --> Threads``` 
 
 ### Built-in: 
-```blockDim.x   // threads per block```
-```gridDim.x    // blocks per grid```
-```threadIdx.x  // thread id within block```
-```blockIdx.x   // block id within grid```
+```blockDim.x   // threads per block```   
+```gridDim.x    // blocks per grid```   
+```threadIdx.x  // thread id within block```   
+```blockIdx.x   // block id within grid```   
 
 ### Global thread index
-```idx = (blockIdx.x × blockDim.x) + threadIdx.x```
+```idx = (blockIdx.x × blockDim.x) + threadIdx.x```   
 
 ### Total threads launched
-```TotalThreads = gridDim.x × blockDim.x```
+```TotalThreads = gridDim.x × blockDim.x```   
 
 ## __syncthreads -> stop execution, and wait until all threads in the block reach same point. 
 Example: 
-    ```
-    __global__ void example()
-    {
-        __shared__ int s[4];
-        int tid = threadIdx.x;
+```
+__global__ void example()
+{
+    __shared__ int s[4];
+    int tid = threadIdx.x;
 
-        s[tid] = tid;     // Step 1: write
+    s[tid] = tid;     // Step 1: write
 
-        __syncthreads();  // Without barrier, thread id 0 might read uninitialized value of s[tid+1] below. 
+    __syncthreads();  // Without barrier, thread id 0 might read uninitialized value of s[tid+1] below. 
 
-        int val = s[(tid + 1) % 4];   // Step 2: safe read
-        printf("Thread %d sees %d\n", tid, val);
-    }
-    ```
+    int val = s[(tid + 1) % 4];   // Step 2: safe read
+    printf("Thread %d sees %d\n", tid, val);
+}
+```
 
     
