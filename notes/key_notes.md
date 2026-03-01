@@ -10,19 +10,24 @@ Peak BW = 896 GB/s
 Peak compute = 44 TFLOPS/s
 ```
 ## Formulas  
-Arithmetic Intensity (AI) = FLOPs / Bytes (for example: vector add -> 1 FLOPS, 12 bytes accessed = 1/12 = 0.083)  
-Roofline Performance = min(Compute Peak, Memory Bandwidth × Arithmetic Intensity). [For memory intensive   operation, peak BW and AI is limiting. For compute heavy, peak compute is limiting.]  
-FLOPS = numThreads * FLOPS per iteration * iterations / kernel_time (secs) * 10e-9  
+- Arithmetic Intensity (AI) = FLOPs / Bytes (for example: vector add -> 1 FLOPS, 12 bytes accessed = 1/12 = 0.083)  
+- Roofline Performance = min(Compute Peak, Memory Bandwidth × Arithmetic Intensity). 
+    - For memory intensive operation, peak BW and AI is limiting. 
+    - For compute heavy, peak compute is limiting.
+- FLOPS = numThreads * FLOPS per iteration * iterations / kernel_time (secs) * 10e-9  
 
 
 ## CUDA execution model
-```Hierarchy: Grid --> Blocks --> Threads``` 
+Hierarchy: 
+- Grid 
+    - Blocks
+        - Threads
 
 ### Built-in: 
-```blockDim.x   // threads per block```   
-```gridDim.x    // blocks per grid```   
-```threadIdx.x  // thread id within block```   
-```blockIdx.x   // block id within grid```   
+- blockDim.x   // threads per block
+- gridDim.x    // blocks per grid
+- threadIdx.x  // thread id within block   
+- blockIdx.x   // block id within grid
 
 ### Global thread index
 ```idx = (blockIdx.x × blockDim.x) + threadIdx.x```   
