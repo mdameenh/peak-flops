@@ -1,8 +1,8 @@
 enable_language(CUDA)
 
-# CMake configuration for 01_sample_tests
+# CMake configuration for 01_vector_addition experiment
 cmake_minimum_required(VERSION 3.18)
-project(sample_tests LANGUAGES CUDA)
+project(vector_addition LANGUAGES CUDA)
 
 # Ensure CUDA language is enabled
 enable_language(CUDA)

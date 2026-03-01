@@ -10,4 +10,5 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 
 # Add subdirectories for experiments and projects
-add_subdirectory(experiments/01_sample_tests)
+add_subdirectory(experiments/01_vector_addition)
+add_subdirectory(experiments/02_axpy)
